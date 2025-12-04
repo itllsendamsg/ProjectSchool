@@ -1,7 +1,7 @@
 package school.marks;
 
 /**
- * Stopień
+ * Grades
  */
 public enum Grade {
     A, B, C, D, E, F

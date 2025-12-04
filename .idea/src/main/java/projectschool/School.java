@@ -13,9 +13,9 @@ import java.util.Map;
 import java.util.Set;
 
 public final class School {
-    // mapa klas w szkole, kluczem jest nazwa klasy
+    // the map of the classes in this specific school, the key is the name of a specific class
     private final Map<String, SchoolClass> schoolClasses = new HashMap<>();
-    // nauczyciele w szkole
+    // school teachers
     private final Set<Teacher> teachers = new HashSet<>();
     private final String name;
 
@@ -23,16 +23,16 @@ public final class School {
         this.name = name;
     }
 
-    // dodaj klasę o danej nazwie
+    // add the class with a specific name
     public void addSchoolClass(String name) throws SchoolClassAlreadyExistsException {
         if (this.schoolClasses.containsKey(name)) {
             throw new SchoolClassAlreadyExistsException();
         }
-        // dodajemy nową klasę
+        // we are adding the new class
         this.schoolClasses.put(name, new SchoolClass(name));
     }
 
-    // pobierz klasę o danej nazwie
+    // get the class with a specific name
     public SchoolClass getSchoolClass(String name) throws NoSuchSchoolClassException {
         if (!this.schoolClasses.containsKey(name)) {
             throw new NoSuchSchoolClassException("There is no such school class in the school!");
@@ -40,7 +40,7 @@ public final class School {
         return this.schoolClasses.get(name);
     }
 
-    // dodaj nauczyciela
+    // add a teacher
     public void addTeacher(Teacher teacher) throws TeacherAlreadyPresentException {
         if (this.teachers.contains(teacher)) {
             throw new TeacherAlreadyPresentException();
@@ -48,7 +48,7 @@ public final class School {
         this.teachers.add(teacher);
     }
 
-    // pobierz nauczyciela o określonym imieniu
+    // get the teacher with a specific name
     public Teacher getTeacher(String name) throws NoSuchTeacherException {
         for (Teacher teacher : this.teachers) {
             if (teacher.getName().equals(name)) {

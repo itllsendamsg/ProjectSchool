@@ -1,7 +1,7 @@
 package school.subjects;
 
 /**
- * Przedmiot
+ * Subjects
  */
 public enum Subject {
     POLISH, MATH, HISTORY, PHYSICS, COMPUTER_SCIENCE, ENGLISH

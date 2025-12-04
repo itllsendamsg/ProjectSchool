@@ -15,18 +15,18 @@ import java.util.Map;
  * Klasa
  */
 public final class SchoolClass {
-    // lista studentów
+    // the list of students
     private final List<Student> students = new LinkedList<>();
-    // mapa przedmiot - nauczyciel
+    // the map subject - teacher
     private final Map<Subject, Teacher> subjectTeacherMap = new HashMap<>();
-    // dziennik
+    // the diary
     private final Diary diary;
-    // nazwa klasy, np. 1A, 2C, itd.
+    // class name, i.e. 1A, 2C, and so on.
     private final String name;
 
     public SchoolClass(String name) {
         this.name = name;
-        // tworzymy nowy dziennik
+        // the new diary is created
         this.diary = new Diary();
     }
 
@@ -35,7 +35,7 @@ public final class SchoolClass {
         this.students.add(student);
     }
 
-    // pobierz ucznia o danym imieniu
+    // get the student with a provided name
     public Student getStudent(String name) throws NoSuchStudentException {
         for (Student student : this.students) {
             if (student.getName().equals(name)) {
@@ -45,7 +45,7 @@ public final class SchoolClass {
         throw new NoSuchStudentException("No such student in the class!");
     }
 
-    // dodaj nauczyciela, który uczy danego przedmiotu
+    // add the teacher who teaches the specific subject
     public void addTeacher(Teacher teacher, Subject subject) {
         this.subjectTeacherMap.put(subject, teacher);
     }

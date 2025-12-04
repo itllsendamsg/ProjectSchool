@@ -6,12 +6,12 @@ import school.subjects.Subject;
 import java.time.LocalDate;
 
 /**
- * Konkretna ocena
- * Składają się na nią:
- *  - stopień
- *  - uczeń, który otrzymał ocenę
- *  - przedmiot, z którego wystawiono ocenę
- *  - data wystawienia oceny
+ * Specific grade
+ * It encompases:
+ *  - the grade
+ *  - the student who got this grade
+ *  - the subject for the given grade
+ *  - the date of the given grade
  */
 public final class Mark {
     private final Grade grade;
